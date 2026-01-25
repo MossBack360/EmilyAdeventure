@@ -11,8 +11,8 @@ const app = new PIXI.Application({
 let playerInfo = {
     health: 100,
     app: app,
-    HUDDisable: true,
-    Depression: 88,
+    HUDDisable: false,
+    Depression: 0,
     Anxiety: 0,
     Stress: 0,
     Confusion: 10,
@@ -35,6 +35,7 @@ let playerInfo = {
 */
 
 let healthBar = new HealthBar({x: 43, y: 133}, playerInfo);
+let startPage = new StartPage(playerInfo);
 
 const filterManager = new Filter(playerInfo);
 
@@ -44,3 +45,4 @@ app.ticker.add(() => {
 });
 
 healthBar.show();
+startPage.show();

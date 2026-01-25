@@ -23,7 +23,10 @@ class HealthBar {
   }
 
   show() {
-    if (!this.playerInfo.HUDDisable) return;
+    if (this.playerInfo.HUDDisable) {
+      this.render();
+    }
+    else {
     const ratio = 100 - this.playerInfo.health;
     const hpUI = new PIXI.Container();
 
@@ -36,6 +39,7 @@ class HealthBar {
     this.beads.mask = this.beadsMask;
 
     this.app.stage.addChild(hpUI);
+    }
   }
 
 }
