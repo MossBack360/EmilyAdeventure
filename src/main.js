@@ -1,4 +1,4 @@
-const { deprecation } = require("pixi.js");
+//const { deprecation } = require("pixi.js");
 
 const app = new PIXI.Application({
     width: 1920,
@@ -12,11 +12,14 @@ let playerInfo = {
     health: 100,
     app: app,
     HUDDisable: true,
-    Depression:0,
-    Anxiety:0,
-    Stress:0,
-    Confusion:0,
-    Hallucination:0
+    Depression: 88,
+    Anxiety: 0,
+    Stress: 0,
+    Confusion: 10,
+    Hallucination: 0,
+    alive : true
+    
+
 
 }
 
@@ -32,4 +35,12 @@ let playerInfo = {
 */
 
 let healthBar = new HealthBar({x: 43, y: 133}, playerInfo);
+
+const filterManager = new Filter(playerInfo);
+
+app.ticker.add(() => {
+    const currentFilters = filterManager.generateMoodFilters();
+    app.stage.filters = currentFilters;
+});
+
 healthBar.show();
