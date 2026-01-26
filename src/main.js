@@ -37,12 +37,24 @@ let playerInfo = {
 let healthBar = new HealthBar({x: 43, y: 133}, playerInfo);
 let startPage = new StartPage(playerInfo);
 
+const settingBtn = new Button({
+  name: 'start',
+  position: { x: 1600, y: 50 },
+  
+  text: 'START',
+  callback: () => {
+    console.log('Game Start');
+  },
+  style: 'classic'
+});
+
 const filterManager = new Filter(playerInfo);
 
-app.ticker.add(() => {
-    const currentFilters = filterManager.generateMoodFilters();
-    app.stage.filters = currentFilters;
-});
+//app.ticker.add(() => {
+//    const currentFilters = filterManager.generateMoodFilters();
+//    app.stage.filters = currentFilters;
+//});
 
 healthBar.show();
 startPage.show();
+app.stage.addChild(settingBtn);
