@@ -23,7 +23,7 @@ async function main()
         HUDDisable: false,
         Depression: 0,
         Anxiety: 0,
-        Stress: 0,
+        Stress: 3,
         Confusion: 10,
         Hallucination: 0,
         alive : true
