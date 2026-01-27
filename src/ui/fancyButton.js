@@ -1,31 +1,35 @@
-class Button extends PIXI.Container {
+class FancyButton extends PIXI.Container {
   constructor({
     name,
     position = { x: 0, y: 0 },
     scale = { x: 1, y: 1 },
     text = '',
     callback = () => {},
-    style = 'classic'
+    upSprite = "/src/ui/buttonOn.png",
+    downSprite="/src/ui/buttonDown.png"
+    
+    //style = 'classic'
   }) {
     super();
 
     this.name = name;
     this.callback = callback;
-    this.style = style;
+    //this.style = style;
     this.isDown = false;
+    this.upSprite = PIXI.Sprite.from(upSprite);
+    this.downSprite=PIXI.Sprite.from(downSprite);
 
     this.position.set(position.x, position.y);
     this.scale.set(scale.x, scale.y);
 
     this._createVisuals(text);
     this._bindEvents();
+
+
   }
 
   _createVisuals(text) {
-    if (this.style === 'classic') {
-      this.upSprite = PIXI.Sprite.from('/src/ui/buttonOn.png');
-      this.downSprite = PIXI.Sprite.from('/src/ui/buttonDown.png');
-    }
+    
 
     this.downSprite.visible = false;
 
