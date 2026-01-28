@@ -7,9 +7,9 @@ class Filter {
         this.vignette = new PIXI.filters.GlowFilter({ color: 0x000000, outerStrength: 0, distance: 200 });
 
         this.oldFilm = new PIXI.filters.ColorMatrixFilter();
-        this.multiColor = new PIXI.filters.MultiColorReplaceFilter({
-            replaceColors: [{ from: 0xffffff, to: 0xffeedd, tolerance: 1 }]
-        });
+        //this.multiColor = new PIXI.filters.MultiColorReplaceFilter({
+        //    replaceColors: [{ from: 0xffffff, to: 0xffeedd, tolerance: 10}]
+        //});
 
         this.zoomBlur = new PIXI.filters.ZoomBlurFilter();
 
@@ -28,14 +28,14 @@ class Filter {
         // 1️⃣ 抑郁 → 去饱和 + 暗角
         if (playerInfo.Depression > 0) {
             this.depressionFilter.desaturate(playerInfo.Depression / 100);
-            filters.push(this.depressionFilter);
+            //filters.push(this.depressionFilter);
 
             this.vignette.outerStrength = playerInfo.Depression / 20;
             filters.push(this.vignette);
         }
 
         // 2️⃣ 焦虑 → old film + MultiColorReplaceFilter 超过50
-        if (playerInfo.Anxiety > 0) {
+       /* if (playerInfo.Anxiety > 0) {
             this.oldFilm.greyscale(playerInfo.Anxiety / 100 * 0.5);
             this.oldFilm.contrast(1 + playerInfo.Anxiety / 200);
             filters.push(this.oldFilm);
@@ -44,7 +44,7 @@ class Filter {
                 this.multiColor.replaceColors[0].tolerance = playerInfo.Anxiety / 50;
                 filters.push(this.multiColor);
             }
-        }
+        }*/
 
         // 3️⃣ 压力 → ZoomBlur + 心跳收缩
         if (playerInfo.Stress > 0) {

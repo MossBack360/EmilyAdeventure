@@ -34,6 +34,21 @@ async function main()
 
     }
 
+    const win = new Window({
+  title: "Hello World",
+  width: 300,
+  height: 200,
+  x: 100,
+  y: 100,
+  resizable: true,
+  maximizable: true,
+  minimizable: true,
+});
+
+win.content.innerHTML = `
+  <p>这是一个 Win98 风格窗口</p>
+`;
+
     /*
     【基础心理轴】（长期、连续）
     - Depression   抑郁        0 ~ 1
@@ -49,6 +64,8 @@ async function main()
     await healthBar.init();
 
     let startPage = new StartPage();
+    let hubPage = new HubPage(playerInfo);
+    await hubPage.init();
 
     let settingBtn = new Button({
         name: 'Setting',
@@ -78,7 +95,7 @@ async function main()
     //});
 
     app.stage.addChild(healthBar);
-    app.stage.addChild(startPage);
+    app.stage.addChild(hubPage);
     app.stage.addChild(settingBtn);
     app.stage.addChild(dialog);
     }
