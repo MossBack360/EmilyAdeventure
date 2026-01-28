@@ -56,7 +56,7 @@ async function main()
         
         text: 'Config',
         callback: () => {
-           //dialog.show();
+           dialog.show();
         }
     });
 
