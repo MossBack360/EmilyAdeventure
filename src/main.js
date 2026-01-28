@@ -26,7 +26,9 @@ async function main()
         Stress: 3,
         Confusion: 10,
         Hallucination: 0,
-        alive : true
+        alive : true,
+
+        whichDialogBox:null
         
 
 
@@ -43,23 +45,30 @@ async function main()
     - Hallucination 幻觉感知  0 ~ 1
     */
 
-    let healthBar = new HealthBar({x: 43, y: 133}, playerInfo);
-    let startPage = new StartPage(playerInfo);
+    let healthBar = new HealthBar(playerInfo);
+    await healthBar.init();
 
-    const settingBtn = new Button({
+    let startPage = new StartPage();
+
+    let settingBtn = new Button({
         name: 'Setting',
         position: { x: 1600, y: 50 },
         
         text: 'Config',
         callback: () => {
-            console.log('Setting');
-        },
-        style: 'classic'
+           //dialog.show();
+        }
     });
 
-
     
+    const dialog = new DialogBox(
+    'The quick brown fox jumps over the lazy dog\nThe quick brown fox jumps over the lazy dog'
+    );
 
+    await dialog.init();
+
+    dialog.x = app.screen.width / 2;
+    dialog.y = app.screen.height;
 
     const filterManager = new Filter(playerInfo);
 
@@ -68,10 +77,10 @@ async function main()
     //    app.stage.filters = currentFilters;
     //});
 
-    healthBar.show();
-    startPage.show();
-    //app.stage.addChild(startBtn)
+    app.stage.addChild(healthBar);
+    app.stage.addChild(startPage);
     app.stage.addChild(settingBtn);
-}
+    app.stage.addChild(dialog);
+    }
 
 main();

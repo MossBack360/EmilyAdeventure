@@ -5,13 +5,13 @@ class Button extends PIXI.Container {
     scale = { x: 1, y: 1 },
     text = '',
     callback = () => {},
-    style = 'classic'
+    //style = 'classic'
   }) {
     super();
 
     this.name = name;
     this.callback = callback;
-    this.style = style;
+    //this.style = style;
     this.isDown = false;
 
     this.position.set(position.x, position.y);
@@ -22,7 +22,7 @@ class Button extends PIXI.Container {
   }
 
   _createVisuals(text) {
-    if (this.style === 'classic') {
+    if (true) {
       this.upSprite = PIXI.Sprite.from('/src/ui/buttonOn.png');
       this.downSprite = PIXI.Sprite.from('/src/ui/buttonDown.png');
     }

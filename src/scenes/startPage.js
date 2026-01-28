@@ -1,15 +1,12 @@
-class StartPage {
-    constructor(playerInfo) {
-        this.playerInfo = playerInfo;
-        this.app = playerInfo.app;
+class StartPage extends PIXI.Container {
+    constructor() {
+        super();
         //this.scene = null;
+        this.init();
+        
     }
 
     init() {
-        // Initialize the start page scene
-    }
-
-    show() {
         let background0 = PIXI.Sprite.from('/src/scenes/startPage/background0.png');
         background0.anchor.set(0,0);
         background0.x = 0;
@@ -154,7 +151,7 @@ class StartPage {
         msk.position.y = 1080/2
         msk.scale.set(8, 8);
 
-        this.app.stage.addChild(background0);
+        this.addChild(background0);
         background0.addChild(deco5)
         background0.addChild(deco4)
         background0.addChild(deco3)
@@ -166,10 +163,6 @@ class StartPage {
         background0.addChild(msk);
         background0.mask = msk
         
-    }
-
-    hide() {
-        // Hide the start page
     }
 
     _goto(obj,offset = [0,50]){

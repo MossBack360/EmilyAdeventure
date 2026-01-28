@@ -5,7 +5,7 @@ class FancyButton extends PIXI.Container {
     scale = { x: 1, y: 1 },
     text = '',
     callback = () => {},
-    upSprite = "/src/ui/buttonOn.png",
+    upSprite= "/src/ui/buttonOn.png",
     downSprite="/src/ui/buttonDown.png"
     
     //style = 'classic'
