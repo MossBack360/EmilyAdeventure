@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "NFPixels";
+  src: url("/fonts/NFPixels-Regular.ttf") format("truetype");
+}
+
+/* 接管所有 os-gui 窗口里的字体 */
+.os-window,
+.os-window * {
+  font-family: "NFPixels", NFPixels;
+}

@@ -7,15 +7,23 @@ class HubPage extends PIXI.Container {
         
     }
     async init(){
-        const [backgroundT,monitorT,screenT] = await Promise.all([
+        const [backgroundT,monitorT,screenT,emilyWindowT] = await Promise.all([
             PIXI.Assets.load('/src/scenes/hubPage/background.png'),
             PIXI.Assets.load('/src/scenes/hubPage/monitor.png'),
-            PIXI.Assets.load('/src/scenes/hubPage/screen.png')
+            PIXI.Assets.load('/src/scenes/hubPage/screen.png'),
+            PIXI.Assets.load('/src/scenes/hubPage/emilyWindow.png'),
 
         ]);
+        let simpleDrag = new SimpleDrag();
+        this.panel1 = new Panel("diary");
+        await this.panel1.init();
+        //this.panel1.position.set(1920/2,1080/2+600);
+        //this.panel1.scale.set(0.9,0.9)
         this.background = new PIXI.Sprite(backgroundT);
         this.monitor = new PIXI.Sprite(monitorT);
         this.screen = new PIXI.Sprite(screenT);
+        this.emilyWindow = new PIXI.Sprite(emilyWindowT);
+        this.emilyWindow.x=1200
 
         const crt = new PIXI.filters.CRTFilter({
             curvature: 5,
@@ -55,15 +63,15 @@ class HubPage extends PIXI.Container {
         
             text: 'fun1',
             callback: () => {
-            //dialog.show();
+            this.panel1.show();
         }
         });
 
         let btn2 = new Button({
-        name: 'fun1',
+        name: 'fun2',
         position: { x: -225, y: -210 },
         
-        text: 'fun1',
+        text: 'fun2',
         callback: () => {
         //dialog.show();
         }
@@ -84,7 +92,11 @@ class HubPage extends PIXI.Container {
         this.playerinfo.app.ticker.add((delta) => {
             crt.time += delta * 0.3;
         });
+        this.addChild(this.emilyWindow);
+        this.addChild(this.panel1)
         
+        simpleDrag.enableDrag(this.emilyWindow);
+
 
 
         
