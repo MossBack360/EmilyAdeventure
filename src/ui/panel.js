@@ -1,18 +1,19 @@
 class Panel extends PIXI.Container {
-  constructor(name,buttons=[]) {
+  constructor(name,buttons=[],panelT = '/src/ui/panel2.png') {
     super();
     this.name=name;
-    this.buttons=buttons
+    this.buttons=buttons;
+    this.panelTPath = panelT;
   }
   async init(){
     const [panelT] = await Promise.all([
-      PIXI.Assets.load('/src/ui/panel2.png'),
+      PIXI.Assets.load(this.panelTPath),
     ]);
 
     this.exitBtn = new Button({
       name: 'exit',
-      position: { x: 260, y: -527 },  
-      text: 'Exit',
+      position: { x: 235, y: -503 },  
+      text: '-Close-',
       callback: () => {
       this.leave();
       }

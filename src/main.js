@@ -49,6 +49,12 @@ async function main()
     let healthBar = new HealthBar(playerInfo);
     await healthBar.init();
 
+    let taskBar = new TaskBar('taskBar1');
+    await taskBar.init();
+    
+    let emilyPanel = new EmilyPanel("panel1")
+    await emilyPanel.init();
+
     let startPage = new StartPage();
     let hubPage = new HubPage(playerInfo);
     await hubPage.init();
@@ -80,10 +86,21 @@ async function main()
     //    app.stage.filters = currentFilters;
     //});
 
-    app.stage.addChild(healthBar);
+
     app.stage.addChild(hubPage);
+    //app.stage.addChild(startPage)
     app.stage.addChild(settingBtn);
+    app.stage.addChild(emilyPanel)
+    app.stage.addChild(taskBar);
     app.stage.addChild(dialog);
+    
+    //app.stage.addChild(healthBar);
+    
+
+
+
     }
+
+    
 
 main();
