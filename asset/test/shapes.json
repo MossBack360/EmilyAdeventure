@@ -1,0 +1,36 @@
+{
+  "generator_info": "Generated with the Free Physics Editor at yandeu.github.io/physics-editor",
+  "shapes": {
+    "startBtnUp": {
+      "bodyType": "DYNAMIC",
+      "fixtures": [
+        {
+          "shapeType": "POLYGON",
+          "isSensor": false,
+          "label": "",
+          "vertices": [
+            [
+              {
+                "x": -0.4,
+                "y": -0.4
+              },
+              {
+                "x": 281.6,
+                "y": -0.4
+              },
+              {
+                "x": 281.6,
+                "y": 121.6
+              },
+              {
+                "x": -0.4,
+                "y": 121.6
+              }
+            ]
+          ]
+        }
+      ],
+      "label": "startBtnUp"
+    }
+  }
+}

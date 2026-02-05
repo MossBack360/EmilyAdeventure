@@ -1,7 +1,8 @@
 class EmilyPanel extends PIXI.Container {
-  constructor(name) {
+  constructor(name,playerinfo) {
     super();
     this.name=name;
+    this.playerinfo=playerinfo;
   }
 
   async init(){
@@ -9,6 +10,7 @@ class EmilyPanel extends PIXI.Container {
 
     const EmilyPanelT = await PIXI.Assets.load('/src/ui/EmilyPanel.png');
     const EmilyT = await PIXI.Assets.load('/src/ui/weirdEmily1.png');
+    const glitch = new PIXI.filters.GlitchFilter();
     this.Emily = PIXI.Sprite.from(EmilyT);
     this.Emily.position.set(6,49);
     this.EmilyPanel = PIXI.Sprite.from(EmilyPanelT);
@@ -26,6 +28,18 @@ class EmilyPanel extends PIXI.Container {
     this.EmilyPanel.position.set(1420,560)
     this.EmilyPanel.addChild(this.SC)
     this.EmilyPanel.addChild(this.EmilyPanel2)
+
+    glitch.slices=4;
+    this.Emily.filters=[glitch];
     simpleDrag.enableDrag(this.EmilyPanel);
+
+    glitch.slices=2.5
+    let t=0
+    this.playerinfo.app.ticker.add((delta) => {
+
+      t += delta * 0.03;
+      glitch.slices = Math.floor((Math.sin(t) + 1) * 5);
+      }
+    )
   }
 }

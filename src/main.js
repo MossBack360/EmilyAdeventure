@@ -52,7 +52,7 @@ async function main()
     let taskBar = new TaskBar('taskBar1');
     await taskBar.init();
     
-    let emilyPanel = new EmilyPanel("panel1")
+    let emilyPanel = new EmilyPanel("panel1",playerInfo)
     await emilyPanel.init();
 
     let startPage = new StartPage();
@@ -95,12 +95,45 @@ async function main()
     app.stage.addChild(dialog);
     
     //app.stage.addChild(healthBar);
+
+    // 这里是测试物理引擎的代码
+
+    const testS = PIXI.Sprite.from('asset/test/startBtnUp.png')
+    app.stage.addChild(testS);
+
+
+
+    let physics = new Physics(app);
+    let ground= physics.Bodies.rectangle(0, 0, 1920, 54);
+    physics.addStatic("ground",ground);
+    //physics.bind("ground",groundS);
+
+    //ground.position.x=1920/2;
+    //ground.position.y=-999;
+    physics.Body.setPosition(ground,{x:1920/2,y:1030+50/2})
+
+    const vertices1 = [
+    { x: 0, y: 0 },
+    { x: 281, y: 0 },
+    { x: 281, y: 121 },
+    { x: 0, y: 121 },
+    ];
+
+
+    let test = physics.Bodies.fromVertices(0, 0, vertices1, { restitution: 0.5 });
+    test.position.x=0;
+    test.position.y=0;
+    let world = physics.world;
+    //Matter.World.add(world, test);
     
+    physics.add("test",test);
+    physics.bind("test",testS);
+    
+    physics.debugRun();
+    console.log(physics.engine.world.bodies); 
 
-
-
-    }
+    app.ticker.add(() => {physics.update()})
 
     
-
+}
 main();
