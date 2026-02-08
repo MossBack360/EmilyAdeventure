@@ -1,130 +1,146 @@
-#  Sandbox Psychological Horror (WIP)
+# SYSTEM:STABILITY
 
-> A sandbox-style psychological horror experiment built with **PIXI.js**, featuring AI-driven behavior and emergent narrative elements.
-
- **Work in Progress** — this is currently a personal experimental project focused on exploring atmosphere, perception, and player psychology rather than a finished game.
+> An AI-driven psychological horror sandbox about maintenance, cognition, and the quiet violence of trying to stay functional.
 
 ---
 
-##  Project Overview
+## Overview
 
-This project is a sandbox psychological horror prototype designed to explore:
+**SYSTEM:STABILITY** is an experimental, AI-driven psychological horror game built around the metaphor of *maintenance*.
+The player repeatedly organizes abstract sand-tray environments under systemic pressure — balancing order, disruption, and artificial stabilization.
 
-* unsettling environmental storytelling
-* player perception manipulation
-* emergent events
-* AI-driven world reactions
+This is not a medical simulation.
+It is a narrative and mechanical exploration of:
 
-Instead of scripted horror sequences, the goal is to create a **living sandbox** where tension builds naturally through interaction, ambiguity, and unpredictable behavior.
+* cognitive overload
+* emotional regulation
+* institutional systems
+* the cost of “staying functional”
 
-Think less jump-scare horror, more slow psychological pressure.
-
----
-
-##  Core Ideas
-
-### Sandbox Horror
-
-The world is interactive and systemic rather than linear. Objects, physics, and environmental triggers combine to produce unexpected situations.
-
-### Psychological Layer
-
-Visual distortions, subtle inconsistencies, and perception tricks are used to create discomfort rather than direct threats.
-
-### AI-driven Behavior (Experimental)
-
-Certain systems react dynamically to player actions, allowing:
-
-* adaptive pacing
-* emergent encounters
-* non-scripted tension
-
-This is an ongoing area of experimentation.
+The experience blends slow procedural gameplay with AI-generated system responses to create a world that reacts to the player’s behavior — not with diagnosis, but with escalating instability.
 
 ---
 
-##  Tech Stack
+## Core Concept
 
-* **Rendering:** PIXI.js
-* **Physics:** (planned / experimental integration)
-* **AI Systems:** custom logic prototypes
-* **Language:** JavaScript
+The player works inside a fictional system tasked with maintaining “stability”.
 
-The focus is rapid iteration and experimentation rather than production architecture.
+Each day consists of:
 
----
+* organizing symbolic sand-tray objects
+* managing limited cognitive capacity
+* responding to interruptions and anomalies
+* choosing whether to rely on stabilization buffs
 
-##  Current Features (Prototype State)
+These actions feed into an AI narrative layer that generates systemic feedback, environmental degradation, and bureaucratic reports.
 
-* PIXI-based rendering sandbox
-* interactive objects
-* basic environmental logic
-* experimental event triggers
+The tension emerges not from combat, but from:
 
-More systems are being added as the project evolves.
+> repetition → pressure → compromise → adaptation
 
 ---
 
-##  Roadmap (Loose / Experimental)
+## AI-Driven System Layer
 
-* [ ] emergent AI encounter system
-* [ ] perception distortion effects
-* [ ] environmental storytelling mechanics
-* [ ] sandbox object interactions
-* [ ] sound-driven psychological cues
-* [ ] save/load world state
+The game uses an AI backend as a **fictional institutional narrator**, not a psychological evaluator.
 
-Roadmap is intentionally flexible — this project evolves based on experimentation.
+The AI:
 
----
+* analyzes abstract spatial arrangements
+* produces cold procedural reports
+* modifies environmental rules
+* escalates systemic instability
 
-##  Philosophy
+It never diagnoses the player.
+It only destabilizes the fictional world.
 
-This is not meant to be a traditional horror game.
-
-The goal is to experiment with:
-
-* discomfort instead of fear
-* ambiguity instead of clarity
-* atmosphere over narrative
-
-The sandbox structure allows unexpected psychological moments to emerge naturally.
+This creates an evolving narrative feedback loop where mechanical decisions influence atmosphere, interface behavior, and perceived system reliability.
 
 ---
 
-##  Running the Project
+## Visual Direction
 
-```bash
-# clone repository
-git clone <repo-url>
+The interface aesthetic combines:
 
-# open index.html in browser
-```
+* Windows Classic UI language
+* early-digital system metaphors
+* dadaist collage textures
+* pixel distortion and glitch artifacts
 
-(Development workflow may change as tooling is added.)
-
----
-
-##  Contribution
-
-This is primarily a personal experimental playground, but ideas and discussions are welcome.
+The visual design intentionally evokes outdated operating systems and corrupted utilities — reinforcing themes of maintenance, decay, and artificial stability.
 
 ---
 
-##  Status
+## Gameplay Influences
 
-Active personal exploration project. Expect rapid changes, unfinished systems, and broken experiments.
+The project draws inspiration from:
+
+* systemic pressure mechanics
+* ritualistic repetition gameplay
+* psychological interface horror
+
+Particular tonal inspiration comes from works exploring dependency, routine, and emotional exhaustion — interpreted through sandbox interaction rather than narrative linearity.
 
 ---
 
-##  License
+## Design Philosophy
 
-TBD — currently experimental personal project.
+SYSTEM:STABILITY is built around a simple premise:
+
+> functioning is labor.
+
+The game is designed to feel:
+
+* repetitive
+* constrained
+* quietly stressful
+* occasionally relieving
+
+Buff systems provide temporary ease at long-term cost.
+System feedback becomes increasingly abstract and unreliable.
+The interface itself participates in the horror.
+
+The goal is not victory — but endurance.
 
 ---
 
-##  Notes
+## Technical Direction
 
-This project exists to explore how interactive systems can create psychological tension without relying on scripted horror conventions.
+* Web-based sandbox architecture
+* canvas-driven object interaction
+* local state simulation
+* AI narrative backend
+* procedural UI degradation
 
-If something feels wrong… it’s probably intentional.
+The project is intentionally modular to support experimentation in AI-assisted narrative systems and interface-driven horror.
+
+---
+
+## Project Status
+
+Personal experimental project.
+Active exploration of:
+
+* AI narrative systems
+* psychological interface design
+* procedural tension mechanics
+
+Expect instability, iteration, and strange behavior.
+
+---
+
+## Disclaimer
+
+This project does **not** provide psychological advice or medical simulation.
+All systems are fictional metaphors designed for artistic exploration.
+
+---
+
+## License
+
+TBD — currently personal research / prototype work.
+
+---
+
+> Maintain stability.
+> Or approximate it.
